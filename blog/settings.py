@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls',
+    'polls.apps.PollsConfig',
 ]
 
 MIDDLEWARE = [
@@ -70,18 +70,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-	'USER': '',
-      	'PASSWORD': '',
-      	'HOST': '',
-      	'PORT': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'polls',
+	    'USER': 'root',
+      	'PASSWORD': 'password',
+      	'HOST': '127.0.0.1',
+      	'PORT': '3306',
     }
 }
 
